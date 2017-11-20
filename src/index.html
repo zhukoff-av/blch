@@ -65,9 +65,10 @@
                                     </span>
               <span class="clipSpan" tooltipster tooltip-theme="tooltipster-theme1" ngclipboard title="Copy this address to the clipboard." data-clipboard-text="{{::account.address}}" ngclipboard-success="clipboardOk()"></span>
               <span class="divider-1"></span>
-              <button class="removeAccount wButtonAlt fade" tooltipster tooltip-theme="tooltipster-theme1" title="Remove this account from the list." ng-click="list.showRemoveWarning($index)">
-                <span class="wButton-icon"><img src="img/wIcon_x.svg"></span>REMOVE
-              </button>
+             <!--TODO Remove button-->
+              <!--<button class="removeAccount wButtonAlt fade" tooltipster tooltip-theme="tooltipster-theme1" title="Remove this account from the list." ng-click="list.showRemoveWarning($index)">-->
+                <!--<span class="wButton-icon"><img src="img/wIcon_x.svg"></span>REMOVE-->
+              <!--</button>-->
             </p>
 
             <button id="import_account" class="wButton fade" tooltipster tooltip-theme="tooltipster-theme1" title="Click here to import an existing account." ng-click="list.importAccount()">IMPORT ACCOUNT</button>
