@@ -23,7 +23,8 @@
             text += 'Encoded seed: ' + ctrl.encodedSeed + '\n';
             text += 'Private key: ' + ctrl.privateKey + '\n';
             text += 'Public key: ' + ctrl.publicKey + '\n';
-            text += 'Address: ' + ctrl.address;
+            text += 'Address: ' + ctrl.address + '\n';
+            text += 'Currency: ' + ctrl.currencyVal
             return text;
         }
 

@@ -24,34 +24,101 @@
         }
 
         ctrl.wallets = [
-            {
-                balance: new Money(0, Currency.USD),
-                depositWith: Currency.USD
-            },
-            {
-                balance: new Money(0, Currency.EUR),
-                depositWith: Currency.EUR
-            },
+
             {
                 balance: new Money(0, Currency.BTC),
                 depositWith: Currency.BTC
-            },
-            {
-                balance: new Money(0, Currency.WAVES),
-                depositWith: Currency.BTC
-            },
-            {
-                balance: new Money(0, Currency.ETH),
-                depositWith: Currency.ETH
-            },
-            {
-                balance: new Money(0, Currency.LTC),
-                depositWith: Currency.LTC
-            },
-            {
-                balance: new Money(0, Currency.ZEC),
-                depositWith: Currency.ZEC
             }
+
+        ];
+
+        ctrl.participantList = [
+            {
+                place: 1,
+                price: '$'+10,
+                capital:'$'+1000
+            },
+            {
+                place: 2,
+                price: '$'+19,
+                capital: '$'+11000
+            },
+            {
+                place: 3,
+                price: '$'+29,
+                capital:'$'+12000
+            },
+            {
+                place: 4,
+                price: '$'+39,
+                capital: '$'+15000
+            },
+            {
+                place: 5,
+                price: '$'+10,
+                capital:'$'+1000
+            },
+            {
+                place: 6,
+                price: '$'+19,
+                capital: '$'+11000
+            },
+            {
+                place: 7,
+                price: '$'+29,
+                capital:'$'+12000
+            },
+            {
+                place: 8,
+                price: '$'+39,
+                capital: '$'+15000
+            }
+        ];
+
+        ctrl.globalViewBrant = [
+            {
+                name: "OPEC",
+                sec: 3,
+                act: "buy"
+
+            },
+            {
+                name: "Saudi",
+                sec: 3,
+                act: "buy"
+
+            }
+        ];
+
+        ctrl.globalViewGold = [
+            {
+                name: "Tax",
+                sec: 1,
+                act: "buy"
+
+            },
+            {
+                name: "Saudi",
+                sec: 3,
+                act: "buy"
+
+            }
+        ];
+
+        ctrl.retro = [
+            {
+                name: "Open price",
+                price: 1002,
+            },
+            {
+                name: "Updated price",
+                price: 2002,
+            },
+            {
+                name: "P&L for now",
+                price: 8.50,
+            },
+
         ];
 
         ctrl.transactions = [];
@@ -78,11 +145,8 @@
             var id = wallet.balance.currency.id,
                 type;
 
-            if (id === Currency.BTC.id ||
-                id === Currency.ETH.id ||
-                id === Currency.WAVES.id ||
-                id === Currency.LTC.id ||
-                id === Currency.ZEC.id
+            if (id === Currency.BTC.id
+
             ) {
                 type = 'crypto';
             } else if (id === Currency.EUR.id || id === Currency.USD.id) {
@@ -165,12 +229,7 @@
         // Assets ID substitution for testnet
         function patchCurrencyIdsForTestnet() {
             if ($scope.isTestnet()) {
-                Currency.EUR.id = '2xnE3EdpqXtFgCP156qt1AbyjpqdZ5jGjWo3CwTawcux';
-                Currency.USD.id = 'HyFJ3rrq5m7FxdkWtQXkZrDat1F7LjVVGfpSkUuEXQHj';
                 Currency.BTC.id = 'Fmg13HEHJHuZYbtJq8Da8wifJENq8uBxDuWoP9pVe2Qe';
-                Currency.ETH.id = '3fVdr1oiX39uS82ZGUPnu7atNQtFHZfPnseRDUcDxrhp';
-                Currency.LTC.id = 'NO_ID_YET'; // FIXME
-                Currency.ZEC.id = 'NO_ID_YET'; // FIXME
                 Currency.invalidateCache();
             }
         }

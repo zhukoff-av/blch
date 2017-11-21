@@ -243,9 +243,7 @@
     <span id="version" class="centerIt">
                 <span>Address:</span>
                 <span id="wavesAccountAddress" class="clipSpan" tooltipster tooltip-theme="tooltipster-theme3" title="Copy the address to clipboard." ngclipboard data-clipboard-text="{{::menu.address}}" ngclipboard-success="clipboardOk()">{{::menu.address}}</span>
-                <span id="wavesAccountAddressQr" ng-click="menu.showAddressQr()">QR</span>
                 <span class="divider-2"></span>
-                <span class="inlineParagraph">Block:</span> <span id="blockheight">{{menu.blockHeight}}</span>
             </span>
 
     <div class="noDisp">
@@ -330,7 +328,15 @@
     <!-- APPLICATION TAB SELECTORS -->
     <section id="tabs" class="fFade noSelect">
       <div id="tabs-Iconset" class="centerIt">
-                    <span waves-tab
+        <div class="cur-header">
+          BTC
+          <span>0.0987</span>
+          <div>
+            GVO
+            <span>0.987</span>
+          </div>
+        </div>
+        <span waves-tab
                           on-select="nav.changeTab(pageId)"
                           current-page-id="nav.currentTab"
                           page-id="wallet"
@@ -357,15 +363,6 @@
               tooltip-html
               tooltip-theme="tooltipster-theme3"
               tooltip-title="<center><u>Waves Decentralized Exchange</u></center><br/>Access to Waves markets where you can<br/>conveniently buy, sell and trade tokens."></span>
-        <span waves-tab
-              on-select="nav.changeTab(pageId)"
-              current-page-id="nav.currentTab"
-              page-id="leasing"
-              caption="'Waves leasing tab'"
-              tooltipster
-              tooltip-html
-              tooltip-theme="tooltipster-theme3"
-              tooltip-title="<center><u>Leasing</u></center><br/>Lease your Waves<br/>to another wallet."></span>
         <!--<span waves-tab on-select="nav.changeTab(pageId)" current-page-id="nav.currentTab" page-id="voting" caption="'Voting tab'" tooltipster tooltip-html-->
         <!--tooltip-theme="tooltipster-theme3" tooltip-title="<center><u>Voting Area</u></center><br/>Decentralized voting utility."></span>-->
         <span waves-tab
@@ -377,15 +374,6 @@
               tooltip-html
               tooltip-theme="tooltipster-theme3"
               tooltip-title="<center><u>History</u></center><br/>Access all your transaction records."></span>
-        <span waves-tab
-              on-select="nav.changeTab(pageId)"
-              current-page-id="nav.currentTab"
-              page-id="tokens"
-              caption="'Tokens Creation tab'"
-              tooltipster
-              tooltip-html
-              tooltip-theme="tooltipster-theme3"
-              tooltip-title="<center><u>Tokens Creation tab</u></center><br/>Area in which assets can be created."></span>
         <!--<span waves-tab on-select="nav.changeTab(pageId)" current-page-id="nav.currentTab" page-id="messages" caption="'Messages tab'" tooltipster tooltip-html-->
         <!--tooltip-theme="tooltipster-theme3" tooltip-title="<center><u>Decentralized Messenger</u></center><br/>Allows private communication between Waves users."></span>-->
         <span waves-tab
@@ -397,6 +385,10 @@
               tooltip-html
               tooltip-theme="tooltipster-theme3"
               tooltip-title="<center><u>Community tab</u></center><br/>Resources to learn more about Waves project such as <br/>forums, blogs, websites, etc."></span>
+
+        <div class="valid-until-header">
+          Valid until...
+        </div>
       </div>
     </section>
 
@@ -774,14 +766,98 @@
             </div>
           </div>
 
-          <div class="flex-container">
-            <wallet-box class="walletBox"
-                        ng-repeat="w in walletList.wallets"
-                        balance="w.balance"
-                        on-send="walletList.send(w)"
-                        on-withdraw="walletList.withdraw(w)"
-                        on-deposit="walletList.deposit(w)"></wallet-box>
-          </div>
+          <!--TODO Main page-->
+            <div class="Row">
+              <div class="Column-main">
+                <section-header>LIST</section-header>
+                <table class="waves-table">
+                  <thead>
+                  <tr class="fade">
+                    <td>PLACE</td>
+                    <td>PRICE</td>
+                    <td>CAPITAL</td>
+                    <td>SUBSCRIPTION</td>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr class="fade" ng-repeat="partList in walletList.participantList | orderBy:'place'">
+                    <td>{{partList.place}}</td>
+                    <td>{{partList.price}}</td>
+                    <td>{{partList.capital}}</td>
+                    <td class="wButton wButton-dialog fade tooltip-1 ng-binding">Subscribe</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="Column">
+                <section-header>GlobalView.Online</section-header>
+                <table class="waves-table">
+                  <thead>
+                  <tr class="fade">
+                    <td></td>
+                    <td>Crude oil/Brent</td>
+                    <td></td>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr class="fade" ng-repeat="globalViewB in walletList.globalViewBrant">
+                    <td>{{globalViewB.name}}</td>
+                    <td>{{globalViewB.sec}}</td>
+                    <td>{{globalViewB.act}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <section-header></section-header>
+                <table class="waves-table">
+                  <thead>
+                  <tr class="fade">
+                    <td>Gold</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr class="fade" ng-repeat="globalViewG in walletList.globalViewGold">
+                    <td>{{globalViewG.name}}</td>
+                    <td>{{globalViewG.sec}}</td>
+                    <td>{{globalViewG.act}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="Column">
+                <section-header>Historical.Online</section-header>
+                <table class="waves-table">
+                <thead>
+                <tr class="fade">
+                  <td></td>
+                  <td>August 18, 2017 / 13,00 GMT</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="fade" ng-repeat="retro in walletList.retro">
+                  <td>{{retro.name}}</td>
+                  <td>{{retro.price}}</td>
+                </tr>
+                </tbody>
+              </table>
+                <table class="waves-table">
+                  <thead>
+                  <tr class="fade">
+                    <td></td>
+                    <td>October 3, 2017 / 13,00 GMT</td>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr class="fade" ng-repeat="retro in walletList.retro">
+                    <td>{{retro.name}}</td>
+                    <td>{{retro.price}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
           <waves-transaction-history heading="LATEST TRANSACTIONS"
                                      transactions="walletList.transactions"
                                      limit-to="10"></waves-transaction-history>

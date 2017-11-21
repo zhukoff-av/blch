@@ -16,7 +16,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  width: auto;
   height: auto;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -25,6 +25,26 @@
   align-content: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+}
+
+.Row
+{
+  display: table;
+  width: 100%; /*Optional*/
+  table-layout: fixed; /*Optional*/
+  border-spacing: 10px; /*Optional*/
+}
+
+.Column-main
+{
+  display: table-cell;
+  width: 35%;
+}
+
+.Column
+{
+  display: table-cell;
+  width: 25%;
 }
 
 .walletBox {
