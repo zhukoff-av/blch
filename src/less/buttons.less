@@ -17,6 +17,35 @@
   }
 }
 
+.s-button {
+  border: 1px solid @color-navy-blue;
+  border-radius: 8px;
+  padding: 25px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  & a {
+    text-decoration: none;
+  }
+  &:hover {
+    background: darkgrey;
+    color: @color-darkest-grey;
+  }
+
+  &[disabled] {
+    &:extend(.disabled-button);
+  }
+
+  & p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0 -50% 0 0;
+    transform: translate(-50%, -55%);
+  }
+}
 
 .disabled-button {
   opacity: .5;
@@ -100,7 +129,6 @@
   }
 }
 
-
 /* Button style for Danger or Error messages against white bg */
 
 .wButtonDanger {
@@ -111,7 +139,6 @@
     color: @color-white;
   }
 }
-
 
 /* Custom buttons */
 
@@ -139,7 +166,6 @@
   }
 }
 
-
 /* Payment forms BUTTONS style */
 
 .paymentForm-but {
@@ -160,7 +186,6 @@
     color: @color-white;
   }
 }
-
 
 /* Send Payment(s) form buttons */
 
