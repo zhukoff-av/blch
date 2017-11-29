@@ -24,7 +24,7 @@
             text += 'Private key: ' + ctrl.privateKey + '\n';
             text += 'Public key: ' + ctrl.publicKey + '\n';
             text += 'Address: ' + ctrl.address + '\n';
-            text += 'Currency: ' + ctrl.currencyVal
+            text += 'Currency: ' + ctrl.currencyVal;
             return text;
         }
 
