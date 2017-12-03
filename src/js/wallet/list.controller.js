@@ -80,15 +80,15 @@
                     if (err !== null) {
                         console.log('Error');
                     } else {
-                          document.getElementById('symbol').innerHTML = data.symbol;
-                          document.getElementById('price_usd').innerHTML = data.price_usd;
-                          document.getElementById('price_btc').innerHTML = data.price_btc;
-                          console.log('is working');
+                        document.getElementById('symbol').innerHTML = data.symbol;
+                        document.getElementById('price_usd').innerHTML = data.price_usd;
+                        document.getElementById('price_btc').innerHTML = data.price_btc;
+                        console.log('Success');
                     }
                 });
         }
 
-        // parseData();
+        parseData();
 
         ctrl.participantList = [
             {
