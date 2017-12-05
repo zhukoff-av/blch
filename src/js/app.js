@@ -12,7 +12,6 @@ var __mockValidateAddress = function(address) {};
 var app = angular.module('app', [
     'restangular',
     'waves.core',
-
     'ngclipboard',
     'ngAnimate',
     'ngMaterial',
@@ -27,6 +26,7 @@ var app = angular.module('app', [
     'app.leasing',
     'app.history',
     'app.community',
+    'app.brief',
     'app.portfolio'
 ]).config(AngularApplicationConfig).run(AngularApplicationRun);
 
