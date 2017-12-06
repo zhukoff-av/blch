@@ -1,0 +1,5 @@
+{
+    "proxy" : "http://proxy.t-systems.ru:3128",
+    "https-proxy" : "http://proxy.t-systems.ru:3128",
+    "strict-ssl": false
+}
