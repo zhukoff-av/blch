@@ -987,26 +987,25 @@
                     </div>
 
                     <div class="Row">
-                      <div class="Column">
-                          <section-header>Rate</section-header>
-                          <table class="waves-table" ng-controller="walletListController as wlc"
-                                 on-dialog-ok="wlc.parseData()">
-                              <thead>
-                              <tr class="fade">
-                                  <td>Currency</td>
-                                  <td>Price USD</td>
-                                  <td>Price BTC</td>
-                              </tr>
-                              </thead>
-                              <tbody>
-                              <tr class="fade">
-                                <td id="symbol"></td>
-                                <td id="price_usd"></td>
-                                <td id="price_btc"></td>
-                              </tr>
-                              </tbody>
-                          </table>
-                      </div>
+                        <div class="Column">
+                            <section-header>Rate</section-header>
+                            <table class="waves-table" ng-controller="briefController as brc">
+                                <thead>
+                                <tr class="fade">
+                                    <td>Currency</td>
+                                    <td>Price USD</td>
+                                    <td>Price BTC</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="fade">
+                                    <td id="symbol"></td>
+                                    <td id="price_usd"></td>
+                                    <td id="price_btc"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         <div class="Column">
                             <section-header>GlobalView.Online</section-header>
                             <table class="waves-table">

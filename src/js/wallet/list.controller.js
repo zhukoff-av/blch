@@ -59,7 +59,6 @@
 
         // fetch data
 
-        // TODO MOVE in the new Controller
         // function parseData() {
         //     var getJSON = function (url, callback) {
         //         var xhr = new XMLHttpRequest();
@@ -89,7 +88,7 @@
         //         });
         // }
         //
-        // parseData();
+        // // parseData();
 
         ctrl.participantList = [
             {

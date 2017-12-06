@@ -1,8 +1,4 @@
 
-
-## Environment set up
-
-Since you have your environment set up you can clone the repository and run in the project root directory
 ```
 npm install
 ```
@@ -11,4 +7,3 @@ Since we are reorganizing the building process, there is something more you need
 npm install -g grunt
 npm install grunt
 grunt distr
-```
