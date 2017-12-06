@@ -88,7 +88,7 @@
                 });
         }
 
-        // parseData();
+        parseData();
 
         ctrl.participantList = [
             {
