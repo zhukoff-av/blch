@@ -948,7 +948,7 @@
                         <!--</table>-->
                         <!--</div>-->
 
-                        <div class="Column" >
+                        <div class="Column">
                             <section-header>GlobalView.Online</section-header>
                             <table class="waves-table" ng-controller="briefController as brc">
                                 <thead>
@@ -1516,6 +1516,7 @@
                                     on-withdraw="walletList.withdraw(w)"
                                     on-deposit="walletList.deposit(w)"></wallet-box>
                     </div>
+
                     <waves-transaction-history heading="LATEST TRANSACTIONS"
                                                transactions="walletList.transactions"
                                                limit-to="10"></waves-transaction-history>
@@ -2084,7 +2085,7 @@
 
                 <!--List of USERS-->
                 <div id="mBB-community" class="mBB-content" ng-switch-when="community"
-                     ng-controller="briefController as brc">
+                     ng-controller="walletListController as wlc">
                     <div class="Column-main">
                         <table class="waves-table">
                             <section-header>LIST</section-header>
@@ -2097,7 +2098,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr class="fade" ng-repeat="partList in brc.participantList | orderBy:'place'">
+                            <tr class="fade" ng-repeat="partList in wlc.participantList | orderBy:'place'">
                                 <td>{{partList.place}}</td>
                                 <td>{{partList.price}}</td>
                                 <td>{{partList.capital}}</td>
