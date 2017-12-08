@@ -2084,7 +2084,7 @@
 
                 <!--List of USERS-->
                 <div id="mBB-community" class="mBB-content" ng-switch-when="community"
-                     ng-controller="walletListController as walletList">
+                     ng-controller="briefController as brc">
                     <div class="Column-main">
                         <table class="waves-table">
                             <section-header>LIST</section-header>
@@ -2097,7 +2097,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr class="fade" ng-repeat="partList in walletList.participantList | orderBy:'place'">
+                            <tr class="fade" ng-repeat="partList in brc.participantList | orderBy:'place'">
                                 <td>{{partList.place}}</td>
                                 <td>{{partList.price}}</td>
                                 <td>{{partList.capital}}</td>
