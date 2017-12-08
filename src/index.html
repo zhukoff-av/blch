@@ -948,9 +948,9 @@
                         <!--</table>-->
                         <!--</div>-->
 
-                        <div class="Column">
+                        <div class="Column" >
                             <section-header>GlobalView.Online</section-header>
-                            <table class="waves-table" ng-controller="walletListController as wlc">
+                            <table class="waves-table" ng-controller="briefController as brc">
                                 <thead>
                                 <tr class="fade">
                                     <td></td>
@@ -959,7 +959,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="fade" ng-repeat="globalViewB in walletList.globalViewBrant">
+                                <tr class="fade" ng-repeat="globalViewB in brc.globalViewBrant">
                                     <td>{{globalViewB.name}}</td>
                                     <td>{{globalViewB.sec}}</td>
                                     <td>{{globalViewB.act}}</td>
@@ -969,7 +969,7 @@
                         </div>
                         <div class="Column">
                             <section-header>Historical.Online</section-header>
-                            <table class="waves-table">
+                            <table class="waves-table" ng-controller="briefController as brc">
                                 <thead>
                                 <tr class="fade">
                                     <td></td>
@@ -977,7 +977,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="fade" ng-repeat="retro in walletList.retro">
+                                <tr class="fade" ng-repeat="retro in brc.retro">
                                     <td>{{retro.name}}</td>
                                     <td>{{retro.price}}</td>
                                 </tr>
@@ -1008,7 +1008,7 @@
                         </div>
                         <div class="Column">
                             <section-header>GlobalView.Online</section-header>
-                            <table class="waves-table">
+                            <table class="waves-table" ng-controller="briefController as brc">
                                 <thead>
                                 <tr class="fade">
                                     <td></td>
@@ -1017,7 +1017,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="fade" ng-repeat="globalViewG in walletList.globalViewGold">
+                                <tr class="fade" ng-repeat="globalViewG in brc.globalViewGold">
                                     <td>{{globalViewG.name}}</td>
                                     <td>{{globalViewG.sec}}</td>
                                     <td>{{globalViewG.act}}</td>
@@ -1027,7 +1027,7 @@
                         </div>
                         <div class="Column">
                             <section-header>Historical.Online</section-header>
-                            <table class="waves-table">
+                            <table class="waves-table" ng-controller="briefController as brc">
                                 <thead>
                                 <tr class="fade">
                                     <td></td>
@@ -1035,7 +1035,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="fade" ng-repeat="retro in walletList.retro">
+                                <tr class="fade" ng-repeat="retro in brc.retro">
                                     <td>{{retro.name}}</td>
                                     <td>{{retro.price}}</td>
                                 </tr>

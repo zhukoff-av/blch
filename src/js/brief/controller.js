@@ -2,6 +2,7 @@
     'use strict';
 
     function BriefController() {
+        var ctrl = this;
         var rate = 'rate works';
         console.log(rate);
 
@@ -35,9 +36,127 @@
         }
 
         parseData();
-    }
 
-    // CommunityController.$inject = ['$scope', '$interval', 'apiService', 'applicationContext'];
+        ctrl.wallets = [
+            {
+                balance: new Money(0, Currency.USD),
+                depositWith: Currency.USD
+            },
+            {
+                balance: new Money(0, Currency.EUR),
+                depositWith: Currency.EUR
+            },
+            {
+                balance: new Money(0, Currency.BTC),
+                depositWith: Currency.BTC
+            },
+            {
+                balance: new Money(0, Currency.WAVES),
+                depositWith: Currency.BTC
+            },
+            {
+                balance: new Money(0, Currency.ETH),
+                depositWith: Currency.ETH
+            },
+            {
+                balance: new Money(0, Currency.LTC),
+                depositWith: Currency.LTC
+            },
+            {
+                balance: new Money(0, Currency.ZEC),
+                depositWith: Currency.ZEC
+            }
+        ];
+
+        ctrl.participantList = [
+            {
+                place: 1,
+                price: '$' + 10,
+                capital: '$' + 1000
+            },
+            {
+                place: 2,
+                price: '$' + 19,
+                capital: '$' + 11000
+            },
+            {
+                place: 3,
+                price: '$' + 29,
+                capital: '$' + 12000
+            },
+            {
+                place: 4,
+                price: '$' + 39,
+                capital: '$' + 15000
+            },
+            {
+                place: 5,
+                price: '$' + 10,
+                capital: '$' + 1000
+            },
+            {
+                place: 6,
+                price: '$' + 19,
+                capital: '$' + 11000
+            },
+            {
+                place: 7,
+                price: '$' + 29,
+                capital: '$' + 12000
+            },
+            {
+                place: 8,
+                price: '$' + 39,
+                capital: '$' + 15000
+            }
+        ];
+
+        ctrl.globalViewBrant = [
+            {
+                name: 'OPEC',
+                sec: 3,
+                act: 'buy'
+
+            },
+            {
+                name: 'Saudi',
+                sec: 3,
+                act: 'buy'
+
+            }
+        ];
+
+        ctrl.globalViewGold = [
+            {
+                name: 'Tax',
+                sec: 1,
+                act: 'buy'
+
+            },
+            {
+                name: 'Saudi',
+                sec: 3,
+                act: 'buy'
+
+            }
+        ];
+
+        ctrl.retro = [
+            {
+                name: 'Open price',
+                price: 1002,
+            },
+            {
+                name: 'Updated price',
+                price: 2002,
+            },
+            {
+                name: 'P&L for now',
+                price: 8.50,
+            },
+
+        ];
+    }
 
     var brief = angular
         .module('app.brief');
