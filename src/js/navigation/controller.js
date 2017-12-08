@@ -6,7 +6,7 @@
         .controller('navigationController', ['$scope', function ($scope) {
             var nav = this;
 
-            nav.currentTab = 'wallet';
+            nav.currentTab = 'brief';
             nav.changeTab = changeTab;
 
             function changeTab (pageId) {

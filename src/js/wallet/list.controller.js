@@ -54,7 +54,6 @@
             }
         ];
 
-
         ctrl.participantList = [
             {
                 place: 1,
@@ -114,11 +113,11 @@
             }
         });
 
-        function send(wallet) {
+        function send (wallet) {
             sendCommandEvent(events.WALLET_SEND, wallet.balance.currency);
         }
 
-        function withdraw(wallet) {
+        function withdraw (wallet) {
             var id = wallet.balance.currency.id,
                 type;
 
@@ -138,7 +137,7 @@
             sendCommandEvent(events.WALLET_WITHDRAW + type, wallet.balance.currency);
         }
 
-        function deposit(wallet) {
+        function deposit (wallet) {
             if (wallet.balance.currency === Currency.WAVES) {
                 depositFromCard(wallet.balance.currency);
             } else {
@@ -149,7 +148,7 @@
             }
         }
 
-        function depositFromCard(currency) {
+        function depositFromCard (currency) {
             dialogService.close();
 
             $scope.$broadcast(events.WALLET_CARD_DEPOSIT, {
@@ -161,7 +160,7 @@
             refreshWallets();
             refreshTransactions();
 
-            refreshPromise = $interval(function () {
+            refreshPromise = $interval(function() {
                 refreshWallets();
                 refreshTransactions();
             }, refreshDelay);
