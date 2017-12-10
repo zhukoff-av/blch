@@ -39,12 +39,19 @@
                     if (err !== null) {
                         console.log('Error');
                     } else {
+                        // Crude Oil
+                        ctrl.factorsNamesCo = data.funds.crude_oil.factors;
+                        ctrl.messageCo = data.funds.crude_oil.message;
+                        ctrl.openPriceCo = data.funds.crude_oil.open_price;
+                        ctrl.updatePriceCo = data.funds.crude_oil.update_price;
+                        ctrl.openDateCo = data.funds.crude_oil.open_date;
 
-                        ctrl.factorsNames = data.funds.crude_oil.factors;
-                        ctrl.message = data.funds.crude_oil.message;
-                        ctrl.openPrice = data.funds.crude_oil.open_price;
-                        ctrl.updatePrice = data.funds.crude_oil.update_price;
-                        ctrl.openDate = data.funds.crude_oil.open_date;
+                        // Gold
+                        ctrl.factorsNamesG = data.funds.gold.factors;
+                        ctrl.messageG = data.funds.gold.message;
+                        ctrl.openPriceG = data.funds.gold.open_price;
+                        ctrl.updatePriceG = data.funds.gold.update_price;
+                        ctrl.openDateG = data.funds.gold.open_date;
                     }
                 });
         }

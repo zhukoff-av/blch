@@ -507,14 +507,14 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="fade" ng-repeat="factor in brc.factorsNames">
+                                <tr class="fade" ng-repeat="factor in brc.factorsNamesCo">
                                     <td>{{factor.name}}</td>
                                     <td>{{factor.old_score}}</td>
                                     <td>{{factor.new_score}}</td>
                                     <td>{{factor.result}}</td>
                                 </tr>
                                 <td></td>
-                                <td>{{brc.message[0]}}</td>
+                                <td>{{brc.messageCo[0]}}</td>
                                 <td></td>
                                 <td></td>
                                 </tbody>
@@ -526,17 +526,17 @@
                                 <thead>
                                 <tr class="fade">
                                     <td></td>
-                                    <td>{{brc.openDate}}</td>
+                                    <td>{{brc.openDateCo}}</td>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr class="fade">
                                     <td>Open Price</td>
-                                    <td>{{brc.openPrice}}</td>
+                                    <td>{{brc.openPriceCo}}</td>
                                 </tr>
                                 <tr class="fade">
                                     <td>Update Price</td>
-                                    <td>{{brc.updatePrice}}</td>
+                                    <td>{{brc.updatePriceCo}}</td>
                                 </tr>
                                 <tr class="fade">
                                     <td>P&L for now</td>
@@ -548,57 +548,72 @@
                     </div>
 
                     <div class="Row">
+                        <!--TODO Rate-->
+                        <!--<div class="Column">-->
+                            <!--<section-header>Rate</section-header>-->
+                            <!--<table class="waves-table" ng-controller="briefController as brc">-->
+                                <!--<thead>-->
+                                <!--<tr class="fade">-->
+                                    <!--<td>Currency</td>-->
+                                    <!--<td>Price USD</td>-->
+                                    <!--<td>Price BTC</td>-->
+                                <!--</tr>-->
+                                <!--</thead>-->
+                                <!--<tbody>-->
+                                <!--<tr class="fade">-->
+                                    <!--<td id="symbol"></td>-->
+                                    <!--<td id="price_usd"></td>-->
+                                    <!--<td id="price_btc"></td>-->
+                                <!--</tr>-->
+                                <!--</tbody>-->
+                            <!--</table>-->
+                        <!--</div>-->
                         <div class="Column">
-                            <section-header>Rate</section-header>
+                            <section-header>Gold</section-header>
                             <table class="waves-table" ng-controller="briefController as brc">
                                 <thead>
                                 <tr class="fade">
-                                    <td>Currency</td>
-                                    <td>Price USD</td>
-                                    <td>Price BTC</td>
+                                    <td>Factor</td>
+                                    <td>Old Score</td>
+                                    <td>New Score</td>
+                                    <td>Result</td>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="fade">
-                                    <td id="symbol"></td>
-                                    <td id="price_usd"></td>
-                                    <td id="price_btc"></td>
+                                <tr class="fade" ng-repeat="factor in brc.factorsNamesG">
+                                    <td>{{factor.name}}</td>
+                                    <td>{{factor.old_score}}</td>
+                                    <td>{{factor.new_score}}</td>
+                                    <td>{{factor.result}}</td>
                                 </tr>
+                                <td></td>
+                                <td>{{brc.messageG[0]}}</td>
+                                <td></td>
+                                <td></td>
                                 </tbody>
                             </table>
                         </div>
                         <div class="Column">
-                            <section-header>GlobalView.Online</section-header>
-                            <table class="waves-table" ng-controller="briefController as brc">
+                            <section-header>Open / Update Price</section-header>
+                            <table class="waves-table">
                                 <thead>
                                 <tr class="fade">
                                     <td></td>
-                                    <td>Gold</td>
-                                    <td></td>
+                                    <td>{{brc.openDateG}}</td>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="fade" ng-repeat="globalViewG in brc.globalViewGold">
-                                    <td>{{globalViewG.name}}</td>
-                                    <td>{{globalViewG.sec}}</td>
-                                    <td>{{globalViewG.act}}</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="Column">
-                            <section-header>Historical.Online</section-header>
-                            <table class="waves-table" ng-controller="briefController as brc">
-                                <thead>
                                 <tr class="fade">
-                                    <td></td>
-                                    <td>October 3, 2017 / 13,00 GMT</td>
+                                    <td>Open Price</td>
+                                    <td>{{brc.openPriceG}}</td>
                                 </tr>
-                                </thead>
-                                <tbody>
-                                <tr class="fade" ng-repeat="retro in brc.retro">
-                                    <td>{{retro.name}}</td>
-                                    <td>{{retro.price}}</td>
+                                <tr class="fade">
+                                    <td>Update Price</td>
+                                    <td>{{brc.updatePriceG}}</td>
+                                </tr>
+                                <tr class="fade">
+                                    <td>P&L for now</td>
+                                    <td>0000000</td>
                                 </tr>
                                 </tbody>
                             </table>
