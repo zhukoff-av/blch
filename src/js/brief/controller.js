@@ -4,6 +4,8 @@
     function BriefController() {
         var ctrl = this;
         var rate = 'rate works';
+        ctrl.factorsNames = [];
+        var message = [];
         console.log(rate);
 
         function parseData() {
@@ -30,7 +32,19 @@
                         document.getElementById('symbol').innerHTML = data.symbol;
                         document.getElementById('price_usd').innerHTML = data.price_usd;
                         document.getElementById('price_btc').innerHTML = data.price_btc;
-                        console.log('is working');
+                      //  console.log('Rate is working');
+                    }
+                });
+
+            getJSON('https://nodes.gvo.io/v1/briefs/last',
+                function (err, data) {
+                    if (err !== null) {
+                        console.log('Error');
+                    } else {
+
+                        ctrl.factorsNames = data.funds.crude_oil.factors;
+                        ctrl.message = data.funds.crude_oil.message;
+                        console.log(message[0]);
                     }
                 });
         }

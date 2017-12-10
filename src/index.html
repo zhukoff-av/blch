@@ -496,21 +496,27 @@
                         <!--</div>-->
 
                         <div class="Column">
-                            <section-header>GlobalView.Online</section-header>
+                            <section-header>GVO</section-header>
                             <table class="waves-table" ng-controller="briefController as brc">
                                 <thead>
                                 <tr class="fade">
-                                    <td></td>
-                                    <td>Crude oil/Brent</td>
-                                    <td></td>
+                                    <td>Crude Oil</td>
+                                    <td>Old Score</td>
+                                    <td>New Score</td>
+                                    <td>Result</td>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="fade" ng-repeat="globalViewB in brc.globalViewBrant">
-                                    <td>{{globalViewB.name}}</td>
-                                    <td>{{globalViewB.sec}}</td>
-                                    <td>{{globalViewB.act}}</td>
+                                <tr class="fade" ng-repeat="factor in brc.factorsNames">
+                                    <td>{{factor.name}}</td>
+                                    <td>{{factor.old_score}}</td>
+                                    <td>{{factor.new_score}}</td>
+                                    <td>{{factor.result}}</td>
                                 </tr>
+                                <td></td>
+                                <td>{{brc.message[0]}}</td>>
+                                <td></td>
+                                <td></td>
                                 </tbody>
                             </table>
                         </div>
