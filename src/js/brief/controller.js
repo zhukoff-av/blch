@@ -5,7 +5,6 @@
         var ctrl = this;
         var rate = 'rate works';
         ctrl.factorsNames = [];
-        var message = [];
         console.log(rate);
 
         function parseData() {
@@ -32,7 +31,6 @@
                         document.getElementById('symbol').innerHTML = data.symbol;
                         document.getElementById('price_usd').innerHTML = data.price_usd;
                         document.getElementById('price_btc').innerHTML = data.price_btc;
-                      //  console.log('Rate is working');
                     }
                 });
 
@@ -44,12 +42,16 @@
 
                         ctrl.factorsNames = data.funds.crude_oil.factors;
                         ctrl.message = data.funds.crude_oil.message;
-                        console.log(message[0]);
+                        ctrl.openPrice = data.funds.crude_oil.open_price;
+                        ctrl.updatePrice = data.funds.crude_oil.update_price;
+                        ctrl.openDate = data.funds.crude_oil.open_date;
                     }
                 });
         }
 
         parseData();
+
+        // TODO Mock GVO remove
 
         ctrl.globalViewBrant = [
             {
@@ -66,6 +68,8 @@
             }
         ];
 
+        // TODO Mock Gold remove
+
         ctrl.globalViewGold = [
             {
                 name: 'Tax',
@@ -81,6 +85,7 @@
             }
         ];
 
+        // TODO Mock Retro remove
         ctrl.retro = [
             {
                 name: 'Open price',
