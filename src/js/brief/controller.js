@@ -28,9 +28,12 @@
                     if (err !== null) {
                         console.log('Error');
                     } else {
-                        document.getElementById('symbol').innerHTML = data.symbol;
-                        document.getElementById('price_usd').innerHTML = data.price_usd;
-                        document.getElementById('price_btc').innerHTML = data.price_btc;
+                        // document.getElementById('symbol').innerHTML = data.symbol;
+                        // document.getElementById('price_usd').innerHTML = data.price_usd;
+                        // document.getElementById('price_btc').innerHTML = data.price_btc;
+                        ctrl.symbol = data.symbol;
+                        ctrl.price_usd = data.price_usd;
+                        ctrl.price_btc = data.price_btc;
                     }
                 });
 
