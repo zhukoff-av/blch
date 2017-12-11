@@ -3,9 +3,7 @@
 
     function BriefController() {
         var ctrl = this;
-        var rate = 'rate works';
         ctrl.factorsNames = [];
-        console.log(rate);
 
         function parseData() {
             var getJSON = function (url, callback) {
@@ -28,9 +26,6 @@
                     if (err !== null) {
                         console.log('Error');
                     } else {
-                        // document.getElementById('symbol').innerHTML = data.symbol;
-                        // document.getElementById('price_usd').innerHTML = data.price_usd;
-                        // document.getElementById('price_btc').innerHTML = data.price_btc;
                         ctrl.symbol = data.symbol;
                         ctrl.price_usd = data.price_usd;
                         ctrl.price_btc = data.price_btc;
@@ -48,6 +43,8 @@
                         ctrl.openPriceCo = data.funds.crude_oil.open_price;
                         ctrl.updatePriceCo = data.funds.crude_oil.update_price;
                         ctrl.openDateCo = data.funds.crude_oil.open_date;
+                        ctrl.plForNowCo = data.funds.crude_oil['p&l_for_now:'];
+
 
                         // Gold
                         ctrl.factorsNamesG = data.funds.gold.factors;
@@ -55,6 +52,9 @@
                         ctrl.openPriceG = data.funds.gold.open_price;
                         ctrl.updatePriceG = data.funds.gold.update_price;
                         ctrl.openDateG = data.funds.gold.open_date;
+                        ctrl.plForNowG = data.funds.gold['p&l_for_now:'];
+
+                        //console.log(ctrl.plForNow);
                     }
                 });
         }
