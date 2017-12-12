@@ -45,7 +45,6 @@
                         ctrl.openDateCo = data.funds.crude_oil.open_date;
                         ctrl.plForNowCo = data.funds.crude_oil['p&l_for_now:'];
 
-
                         // Gold
                         ctrl.factorsNamesG = data.funds.gold.factors;
                         ctrl.messageG = data.funds.gold.message;
@@ -54,11 +53,13 @@
                         ctrl.openDateG = data.funds.gold.open_date;
                         ctrl.plForNowG = data.funds.gold['p&l_for_now:'];
 
-                        //console.log(ctrl.plForNow);
+                        ctrl.tDates = data.funds;
+
+                        var dat = this;
+                        for (dat in ctrl.tDates) console.log(dat);
                     }
                 });
         }
-
         parseData();
 
         // TODO Mock GVO remove
