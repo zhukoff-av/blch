@@ -80,56 +80,6 @@
 
         parseData();
 
-        // TODO Mock GVO remove
-
-        ctrl.globalViewBrant = [
-            {
-                name: 'OPEC',
-                sec: 3,
-                act: 'buy'
-
-            },
-            {
-                name: 'Saudi',
-                sec: 3,
-                act: 'buy'
-
-            }
-        ];
-
-        // TODO Mock Gold remove
-
-        ctrl.globalViewGold = [
-            {
-                name: 'Tax',
-                sec: 1,
-                act: 'buy'
-
-            },
-            {
-                name: 'Saudi',
-                sec: 3,
-                act: 'buy'
-
-            }
-        ];
-
-        // TODO Mock Retro remove
-        ctrl.retro = [
-            {
-                name: 'Open price',
-                price: 1002,
-            },
-            {
-                name: 'Updated price',
-                price: 2002,
-            },
-            {
-                name: 'P&L for now',
-                price: 8.50,
-            },
-
-        ];
     }
 
     var brief = angular
