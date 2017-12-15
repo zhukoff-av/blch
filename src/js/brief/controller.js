@@ -55,11 +55,29 @@
 
                         ctrl.tDates = data.funds;
 
-                        var dat = this;
-                        for (dat in ctrl.tDates) console.log(dat);
+                        var array = [];
+                        for (var key in ctrl.tDates) {
+                            debugger;
+                            if (ctrl.tDates.hasOwnProperty(key)) {
+                                array.push({data: ctrl.tDates[key].factors});
+                                console.log(ctrl.tDates[key]);
+                            }
+
+                        // console.log(key);
+                        }
+                        console.log(array);
+
+                       // var values = {};
+                       //
+                       //  var log = [];
+                       //  angular.forEach(ctrl.tDates, function (value, key) {
+                       //      this.push(key + ': ' + value);
+                       //  }, log);
+                       //  console.log(log);
                     }
                 });
         }
+
         parseData();
 
         // TODO Mock GVO remove
