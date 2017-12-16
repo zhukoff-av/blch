@@ -473,9 +473,11 @@
                     <!--TODO Image SVG-->
                     <!--<img src="https://gvo.io/testsvggenerator2017/1.svg">-->
                     <!--TODO Main page SKIPPED / => to Communiti TAB  -->
+
+                    <!--FIRST ROW -->
                     <div class="Row">
                         <div class="Column" ng-controller="briefController as brc">
-                            <section-header> </section-header>
+                            <section-header>{{brc.fundNames[0].keys | uppercase}}</section-header>
                             <table class="waves-table">
                                 <thead>
                                 <tr class="fade">
@@ -492,6 +494,12 @@
                                     <td>{{factor.new_score}}</td>
                                     <td>{{factor.result}}</td>
                                 </tr>
+
+                                <!--TODO REMOVE. JUST FOR TEST-->
+                                <!--<tr class="fade" ng-repeat="item in brc.fundNames">-->
+                                <!--<td>{{item.keys}}</td>-->
+                                <!--</tr>-->
+
                                 <td></td>
                                 <td>{{brc.messageCo[0]}}</td>
                                 <td></td>
@@ -500,7 +508,7 @@
                             </table>
                         </div>
                         <div class="Column Column-hist" ng-controller="briefController as brc">
-                            <section-header>Open / Update Price</section-header>
+                            <section-header>OPEN / Update </section-header>
                             <table class="waves-table">
                                 <thead>
                                 <tr class="fade">
@@ -525,10 +533,12 @@
                             </table>
                         </div>
                     </div>
+                    <!-- / FIRST ROW -->
 
+                    <!--SECOND ROW -->
                     <div class="Row">
                         <div class="Column">
-                            <section-header>Gold</section-header>
+                            <section-header>{{brc.fundNames[1].keys | uppercase}}</section-header>
                             <table class="waves-table" ng-controller="briefController as brc">
                                 <thead>
                                 <tr class="fade">
@@ -553,7 +563,7 @@
                             </table>
                         </div>
                         <div class="Column">
-                            <section-header>Open / Update Price</section-header>
+                            <section-header>OPEN / Update Price</section-header>
                             <table class="waves-table">
                                 <thead>
                                 <tr class="fade">
@@ -578,7 +588,119 @@
                             </table>
                         </div>
                     </div>
+                    <!-- / SECOND ROW -->
 
+                    <!--THREE ROW-->
+                    <div class="Row">
+                        <div class="Column">
+                            <section-header>{{brc.fundNames[2].keys | uppercase}}</section-header>
+                            <table class="waves-table" ng-controller="briefController as brc">
+                                <thead>
+                                <tr class="fade">
+                                    <td>Factor</td>
+                                    <td>Old Score</td>
+                                    <td>New Score</td>
+                                    <td>Result</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="fade" ng-repeat="factor in brc.factorsNamesG">
+                                    <td>Mock</td>
+                                    <td>Mock</td>
+                                    <td>MockMock</td>
+                                    <td>Mock</td>
+                                </tr>
+                                <td>Mock</td>
+                                <td>Mock</td>
+                                <td>Mock</td>
+                                <td>Mock</td>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="Column">
+                            <section-header>OPEN / Update Price</section-header>
+                            <table class="waves-table">
+                                <thead>
+                                <tr class="fade">
+                                    <td></td>
+                                    <td>{{brc.openDateG}}</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="fade">
+                                    <td>Open Price</td>
+                                    <td>{{brc.openPriceG}}</td>
+                                </tr>
+                                <tr class="fade">
+                                    <td>Update Price</td>
+                                    <td>{{brc.updatePriceG}}</td>
+                                </tr>
+                                <tr class="fade">
+                                    <td>P&L for now</td>
+                                    <td>{{brc.plForNowG}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- / THREE ROW-->
+
+                    <!--FOUR ROW-->
+                    <div class="Row">
+                        <div class="Column">
+                            <section-header>{{brc.fundNames[3].keys | uppercase}}</section-header>
+                            <table class="waves-table" ng-controller="briefController as brc">
+                                <thead>
+                                <tr class="fade">
+                                    <td>Factor</td>
+                                    <td>Old Score</td>
+                                    <td>New Score</td>
+                                    <td>Result</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="fade" ng-repeat="factor in brc.factorsNamesG">
+                                    <td>Mock</td>
+                                    <td>Mock</td>
+                                    <td>Mock</td>
+                                    <td>Mock</td>
+                                </tr>
+                                <td>Mock</td>
+                                <td>Mock</td>
+                                <td>Mock</td>
+                                <td>Mock</td>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="Column">
+                            <section-header>OPEN / Update Price</section-header>
+                            <table class="waves-table">
+                                <thead>
+                                <tr class="fade">
+                                    <td></td>
+                                    <td>00000</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="fade">
+                                    <td>Open Price</td>
+                                    <td>000</td>
+                                </tr>
+                                <tr class="fade">
+                                    <td>Update Price</td>
+                                    <td>000</td>
+                                </tr>
+                                <tr class="fade">
+                                    <td>P&L for now</td>
+                                    <td>000</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- / FOUR ROW-->
+
+                    <!--TABLE RATE -->
                     <div class="Row">
                         <!--TODO Rate-->
                         <div class="Column">
