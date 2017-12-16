@@ -4,6 +4,8 @@
     function BriefController() {
         var ctrl = this;
         ctrl.factorsNames = [];
+        ctrl.array = [];
+        ctrl.fundNames = [];
 
         function parseData() {
             var getJSON = function (url, callback) {
@@ -55,25 +57,19 @@
 
                         ctrl.tDates = data.funds;
 
-                        var array = [];
                         for (var key in ctrl.tDates) {
-                            debugger;
+                            // debugger;
                             if (ctrl.tDates.hasOwnProperty(key)) {
-                                array.push({data: ctrl.tDates[key].factors});
-                                console.log(ctrl.tDates[key]);
+                                ctrl.array.push({data: ctrl.tDates[key].factors});
+                                // console.log(ctrl.tDates[key].id);
+                                ctrl.fundNames.push({keys: key});
+
+                                // console.log(ctrl.arrayKey);
                             }
+                        // console.log(array["0"].data.id);
 
-                        // console.log(key);
                         }
-                        console.log(array);
-
-                       // var values = {};
-                       //
-                       //  var log = [];
-                       //  angular.forEach(ctrl.tDates, function (value, key) {
-                       //      this.push(key + ': ' + value);
-                       //  }, log);
-                       //  console.log(log);
+                        // console.log(array.data);
                     }
                 });
         }
