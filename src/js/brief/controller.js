@@ -3,7 +3,6 @@
 
     function BriefController() {
         var ctrl = this;
-        ctrl.factorsNames = [];
         ctrl.array = [];
         ctrl.fundNames = [];
 
@@ -55,6 +54,22 @@
                         ctrl.openDateG = data.funds.gold.open_date;
                         ctrl.plForNowG = data.funds.gold['p&l_for_now:'];
 
+                        //DowJ dow_j_mini/s&p_500
+                        ctrl.factorsNamesDj = data.funds['dow_j_mini/s&p_500'].factors;
+                        ctrl.messageDj = data.funds['dow_j_mini/s&p_500'].message;
+                        ctrl.openPriceDj = data.funds['dow_j_mini/s&p_500'].open_price;
+                        ctrl.updatePriceDj = data.funds['dow_j_mini/s&p_500'].update_price;
+                        ctrl.openDateDj = data.funds['dow_j_mini/s&p_500'].open_date;
+                        ctrl.plForNowDj = data.funds['dow_j_mini/s&p_500']['realized_p&l:'];
+
+                        //EUR/USD_FX
+                        ctrl.factorsNamesEU = data.funds['eur/usd_fx'].factors;
+                        ctrl.messageEU = data.funds['eur/usd_fx'].message;
+                        ctrl.openPriceEU = data.funds['eur/usd_fx'].open_price;
+                        ctrl.updatePriceEU = data.funds['eur/usd_fx'].update_price;
+                        ctrl.openDateEU = data.funds['eur/usd_fx'].open_date;
+                        ctrl.plForNowEU = data.funds['eur/usd_fx']['realized_p&l:'];
+
                         ctrl.tDates = data.funds;
 
                         for (var key in ctrl.tDates) {
@@ -63,14 +78,10 @@
                                 ctrl.array.push({data: ctrl.tDates[key].factors});
                                 // console.log(ctrl.tDates[key].id);
                                 ctrl.fundNames.push({keys: key});
-
-                                // console.log(ctrl.arrayKey);
                             }
-                        // console.log(array["0"].data.id);
-
                         }
-                        // console.log(array.data);
                     }
+
                 });
         }
 

@@ -48,7 +48,7 @@
 
         <thead>
         <div id="logoNversion">
-            <img src="img/topleftlogo.svg"/>
+            <img src="img/mainLogo.png"/>
             <p ng-class='{testnet: isTestnet()}'>{{::home.title}} <span class="wlcversion">{{::home.version}}</span></p>
         </div>
         </thead>
@@ -290,10 +290,11 @@
 
     <!-- HEADER -->
     <header class="fFade noSelect" ng-controller="mainMenuController as menu">
-        <img id="topLogoH" src="img/topleftlogo_hor.svg" alt="Waves platform logo horizontal"/>
+        <img id="topLogoH" src="img/mainLogo.png" alt="Waves platform logo horizontal"/>
         <div id="logoNversion2">
-            <img src="img/topleftlogo.svg"/>
-            <p ng-class='{testnet: isTestnet()}'>{{::home.title}} <span class="wlcversion">{{::home.version}}</span></p>
+            <img src="img/mainLogo.png"/>
+            <!--TODO Remove Version of Testnet-->
+            <!--<p ng-class='{testnet: isTestnet()}'>{{::home.title}} <span class="wlcversion">{{::home.version}}</span></p>-->
         </div>
         <span id="version" class="centerIt">
                 <span>Address:</span>
@@ -477,7 +478,7 @@
                     <!--FIRST ROW -->
                     <div class="Row">
                         <div class="Column" ng-controller="briefController as brc">
-                            <section-header>{{brc.fundNames[0].keys | uppercase}}</section-header>
+                            <section-header class="header-name">{{brc.fundNames[0].keys | uppercase}}</section-header>
                             <table class="waves-table">
                                 <thead>
                                 <tr class="fade">
@@ -492,7 +493,7 @@
                                     <td>{{factor.name}}</td>
                                     <td>{{factor.old_score}}</td>
                                     <td>{{factor.new_score}}</td>
-                                    <td>{{factor.result}}</td>
+                                    <td>{{factor.result | uppercase}}</td>
                                 </tr>
 
                                 <!--TODO REMOVE. JUST FOR TEST-->
@@ -508,7 +509,7 @@
                             </table>
                         </div>
                         <div class="Column Column-hist" ng-controller="briefController as brc">
-                            <section-header>OPEN / Update </section-header>
+                            <section-header class="header-second-table">{{brc.tDates.crude_oil.id | uppercase}}</section-header>
                             <table class="waves-table">
                                 <thead>
                                 <tr class="fade">
@@ -538,7 +539,7 @@
                     <!--SECOND ROW -->
                     <div class="Row">
                         <div class="Column">
-                            <section-header>{{brc.fundNames[1].keys | uppercase}}</section-header>
+                            <section-header class="header-name">{{brc.fundNames[1].keys | uppercase}}</section-header>
                             <table class="waves-table" ng-controller="briefController as brc">
                                 <thead>
                                 <tr class="fade">
@@ -553,7 +554,7 @@
                                     <td>{{factor.name}}</td>
                                     <td>{{factor.old_score}}</td>
                                     <td>{{factor.new_score}}</td>
-                                    <td>{{factor.result}}</td>
+                                    <td>{{factor.result | uppercase}}</td>
                                 </tr>
                                 <td></td>
                                 <td>{{brc.messageG[0]}}</td>
@@ -563,7 +564,7 @@
                             </table>
                         </div>
                         <div class="Column">
-                            <section-header>OPEN / Update Price</section-header>
+                            <section-header class="header-second-table">{{brc.tDates.gold.id | uppercase}}</section-header>
                             <table class="waves-table">
                                 <thead>
                                 <tr class="fade">
@@ -593,7 +594,7 @@
                     <!--THREE ROW-->
                     <div class="Row">
                         <div class="Column">
-                            <section-header>{{brc.fundNames[2].keys | uppercase}}</section-header>
+                            <section-header class="header-name">{{brc.fundNames[2].keys | uppercase}}</section-header>
                             <table class="waves-table" ng-controller="briefController as brc">
                                 <thead>
                                 <tr class="fade">
@@ -604,40 +605,40 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="fade" ng-repeat="factor in brc.factorsNamesG">
-                                    <td>Mock</td>
-                                    <td>Mock</td>
-                                    <td>MockMock</td>
-                                    <td>Mock</td>
+                                <tr class="fade" ng-repeat="factor in brc.factorsNamesDj">
+                                    <td>{{factor.name}}</td>
+                                    <td>{{factor.old_score}}</td>
+                                    <td>{{factor.new_score}}</td>
+                                    <td>{{factor.result | uppercase}}</td>
                                 </tr>
-                                <td>Mock</td>
-                                <td>Mock</td>
-                                <td>Mock</td>
-                                <td>Mock</td>
+                                <td></td>
+                                <td>{{brc.messageDj[0]}}</td>
+                                <td></td>
+                                <td></td>
                                 </tbody>
                             </table>
                         </div>
                         <div class="Column">
-                            <section-header>OPEN / Update Price</section-header>
+                            <section-header class="header-second-table">{{brc.tDates['dow_j_mini/s&p_500'].id | uppercase}}</section-header>
                             <table class="waves-table">
                                 <thead>
                                 <tr class="fade">
                                     <td></td>
-                                    <td>{{brc.openDateG}}</td>
+                                    <td>{{brc.openDateDj}}</td>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr class="fade">
                                     <td>Open Price</td>
-                                    <td>{{brc.openPriceG}}</td>
+                                    <td>{{brc.openPriceDj}}</td>
                                 </tr>
                                 <tr class="fade">
                                     <td>Update Price</td>
-                                    <td>{{brc.updatePriceG}}</td>
+                                    <td>{{brc.updatePriceDj}}</td>
                                 </tr>
                                 <tr class="fade">
                                     <td>P&L for now</td>
-                                    <td>{{brc.plForNowG}}</td>
+                                    <td>{{brc.plForNowDj}}</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -648,7 +649,7 @@
                     <!--FOUR ROW-->
                     <div class="Row">
                         <div class="Column">
-                            <section-header>{{brc.fundNames[3].keys | uppercase}}</section-header>
+                            <section-header class="header-name">{{brc.fundNames[3].keys | uppercase}}</section-header>
                             <table class="waves-table" ng-controller="briefController as brc">
                                 <thead>
                                 <tr class="fade">
@@ -659,40 +660,40 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="fade" ng-repeat="factor in brc.factorsNamesG">
-                                    <td>Mock</td>
-                                    <td>Mock</td>
-                                    <td>Mock</td>
-                                    <td>Mock</td>
+                                <tr class="fade" ng-repeat="factor in brc.factorsNamesEU">
+                                    <td>{{factor.name}}</td>
+                                    <td>{{factor.old_score}}</td>
+                                    <td>{{factor.new_score}}</td>
+                                    <td>{{factor.result | uppercase}}</td>
                                 </tr>
-                                <td>Mock</td>
-                                <td>Mock</td>
-                                <td>Mock</td>
-                                <td>Mock</td>
+                                <td></td>
+                                <td>{{brc.messageDj[0]}}</td>
+                                <td></td>
+                                <td></td>
                                 </tbody>
                             </table>
                         </div>
                         <div class="Column">
-                            <section-header>OPEN / Update Price</section-header>
+                            <section-header class="header-second-table">{{brc.tDates['eur/usd_fx'].id | uppercase}}</section-header>
                             <table class="waves-table">
                                 <thead>
                                 <tr class="fade">
                                     <td></td>
-                                    <td>00000</td>
+                                    <td>{{brc.openDateEU}}</td>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr class="fade">
                                     <td>Open Price</td>
-                                    <td>000</td>
+                                    <td>{{brc.openPriceEU}}</td>
                                 </tr>
                                 <tr class="fade">
                                     <td>Update Price</td>
-                                    <td>000</td>
+                                    <td>{{brc.updatePriceEU}}</td>
                                 </tr>
                                 <tr class="fade">
                                     <td>P&L for now</td>
-                                    <td>000</td>
+                                    <td>{{brc.plForNowEU}}</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -704,7 +705,26 @@
                     <div class="Row">
                         <!--TODO Rate-->
                         <div class="Column">
-                            <section-header>Rate</section-header>
+                        <section-header class="header-name">Rate</section-header>
+                        <table class="waves-table" ng-controller="briefController as brc">
+                            <thead>
+                            <tr class="fade">
+                                <td>Currency</td>
+                                <td>Price USD</td>
+                                <td>Price BTC</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="fade">
+                                <td>{{brc.symbol}}</td>
+                                <td>{{brc.price_usd}}</td>
+                                <td>{{brc.price_btc}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                        <div class="Column">
+                            <section-header class="header-name">Rate</section-header>
                             <table class="waves-table" ng-controller="briefController as brc">
                                 <thead>
                                 <tr class="fade">
