@@ -509,7 +509,8 @@
                             </table>
                         </div>
                         <div class="Column Column-hist" ng-controller="briefController as brc">
-                            <section-header class="header-second-table">{{brc.tDates.crude_oil.id | uppercase}}</section-header>
+                            <section-header class="header-second-table">{{brc.tDates.crude_oil.id | uppercase}}
+                            </section-header>
                             <table class="waves-table">
                                 <thead>
                                 <tr class="fade">
@@ -564,7 +565,8 @@
                             </table>
                         </div>
                         <div class="Column">
-                            <section-header class="header-second-table">{{brc.tDates.gold.id | uppercase}}</section-header>
+                            <section-header class="header-second-table">{{brc.tDates.gold.id | uppercase}}
+                            </section-header>
                             <table class="waves-table">
                                 <thead>
                                 <tr class="fade">
@@ -619,7 +621,9 @@
                             </table>
                         </div>
                         <div class="Column">
-                            <section-header class="header-second-table">{{brc.tDates['dow_j_mini/s&p_500'].id | uppercase}}</section-header>
+                            <section-header class="header-second-table">{{brc.tDates['dow_j_mini/s&p_500'].id |
+                                uppercase}}
+                            </section-header>
                             <table class="waves-table">
                                 <thead>
                                 <tr class="fade">
@@ -674,7 +678,8 @@
                             </table>
                         </div>
                         <div class="Column">
-                            <section-header class="header-second-table">{{brc.tDates['eur/usd_fx'].id | uppercase}}</section-header>
+                            <section-header class="header-second-table">{{brc.tDates['eur/usd_fx'].id | uppercase}}
+                            </section-header>
                             <table class="waves-table">
                                 <thead>
                                 <tr class="fade">
@@ -705,24 +710,24 @@
                     <div class="Row">
                         <!--TODO Rate-->
                         <div class="Column">
-                        <section-header class="header-name">Rate</section-header>
-                        <table class="waves-table" ng-controller="briefController as brc">
-                            <thead>
-                            <tr class="fade">
-                                <td>Currency</td>
-                                <td>Price USD</td>
-                                <td>Price BTC</td>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr class="fade">
-                                <td>{{brc.symbol}}</td>
-                                <td>{{brc.price_usd}}</td>
-                                <td>{{brc.price_btc}}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                            <section-header class="header-name">Rate</section-header>
+                            <table class="waves-table" ng-controller="briefController as brc">
+                                <thead>
+                                <tr class="fade">
+                                    <td>Currency</td>
+                                    <td>Price USD</td>
+                                    <td>Price BTC</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="fade">
+                                    <td>{{brc.symbol}}</td>
+                                    <td>{{brc.price_usd}}</td>
+                                    <td>{{brc.price_btc}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                         <div class="Column">
                             <section-header class="header-name">Rate</section-header>
                             <table class="waves-table" ng-controller="briefController as brc">
@@ -745,9 +750,9 @@
                     </div>
 
                     <!--TODO LATEST TRANSACTIONS-->
-                    <waves-transaction-history heading="LATTEST BRIEFS"
-                                               transactions="walletList.transactions"
-                                               limit-to="10"></waves-transaction-history>
+                    <waves-transaction-history heading="LATTEST BRIEFS">
+
+                    </waves-transaction-history>
                 </div>
                 <!-- / BRIEF TAB -->
 

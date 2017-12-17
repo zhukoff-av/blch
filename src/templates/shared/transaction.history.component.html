@@ -1,19 +1,34 @@
 <section-header>{{::$ctrl.heading}}</section-header>
 <waves-scrollbox class="transactions-table">
-  <table>
-    <thead>
-      <tr>
-        <td>DATE</td>
-        <td>TIME</td>
-        <td>IS OPEN</td>
-        <td>EXPAND</td>
-      </tr>
-    </thead>
+    <table ng-controller="mainMenuController as menu">
+        <thead>
+        <tr>
+            <td>DATE</td>
+            <td>TIME</td>
+            <td>IS OPEN</td>
+            <td>EXPAND</td>
+        </tr>
+        </thead>
 
-      <!--TODO COMMENTED TABLE "LATTEST BRIEFS"-->
-    <!--<tbody>-->
-      <!--<tr ng-repeat="tx in $ctrl.transactions | orderBy:'timestamp':true | limitTo:$ctrl.limitTo | transaction track by tx.timestamp"-->
-          <!--ng-class="{'tx-unc': tx.unconfirmed, 'tx-in': !tx.formatted.isOutgoing, 'tx-out': tx.formatted.isOutgoing}">-->
+        <tbody>
+        <tr>
+            <td>11.11.2017</td>
+            <td>22:22:00</td>
+            <td>open</td>
+
+            <td class="wButton wButton-dialog fade ng-binding ng-scope">Expand</td>
+
+            <!--TODO Image -->
+            <!--<img ng-src="https://gvo.io/testsvggenerator2017/1.svg"-->
+            <!--class="gallery-image fade-animation"-->
+            <!--ng-click="openInNewWindow($index)"-->
+            <!--ng-show="nowShowing==$index">-->
+        </tr>
+        </tbody>
+        <!--TODO COMMENTED TABLE "LATTEST BRIEFS"-->
+        <!--<tbody>-->
+        <!--<tr ng-repeat="tx in $ctrl.transactions | orderBy:'timestamp':true | limitTo:$ctrl.limitTo | transaction track by tx.timestamp"-->
+        <!--ng-class="{'tx-unc': tx.unconfirmed, 'tx-in': !tx.formatted.isOutgoing, 'tx-out': tx.formatted.isOutgoing}">-->
         <!--<td>{{tx.formatted.datetime}}</td>-->
         <!--<td>{{tx.formatted.type}}</td>-->
         <!--<td>{{tx.formatted.asset}}</td>-->
@@ -22,38 +37,38 @@
         <!--<td>{{tx.formatted.fee}} {{tx.formatted.feeAsset.shortName}}</td>-->
         <!--<td>{{tx.formatted.amount}}</td>-->
         <!--<td width="16">-->
-          <!--<tx-menu transaction="tx"></tx-menu>-->
+        <!--<tx-menu transaction="tx"></tx-menu>-->
         <!--</td>-->
-      <!--</tr>-->
-    <!--</tbody>-->
-  </table>
-
-  <!--<div id="cancel-leasing-confirmation" waves-dialog ok-button-caption="CONFIRM" on-dialog-ok="$ctrl.cancelLeasing($ctrl.form)">-->
+        <!--</tr>-->
+        <!--</tbody>-->
+    </table>
+    <!--<div id="cancel-leasing-confirmation" waves-dialog ok-button-caption="CONFIRM" on-dialog-ok="$ctrl.cancelLeasing($ctrl.form)">-->
     <!--<div class="dialog-confirmation">-->
-      <!--<p class="dialog-text">You are going to cancel leasing of <span class="confirmation-value">{{$ctrl.confirm.amount}}</span>-->
-        <!--<span class="confirmation-value">{{$ctrl.confirm.asset}}</span><br/>-->
-        <!--for the address <span class="confirmation-value">{{$ctrl.confirm.recipient}}</span>-->
-      <!--</p>-->
-        <!--<form name="$ctrl.form" novalidate ng-validate="$ctrl.validationOptions">-->
-            <!--<table>-->
-                <!--<tbody>-->
-                    <!--<tr>-->
-                        <!--<td>Waves fee</td>-->
-                        <!--<td>-->
-                            <!--<md-autocomplete md-input-name="cancelFee" md-selected-item="$ctrl.autocomplete.selectedFee" md-search-text="$ctrl.autocomplete.searchText"-->
-                                             <!--md-items="item in $ctrl.autocomplete.querySearch($ctrl.autocomplete.searchText)"-->
-                                             <!--md-item-text="item.amount.toString()" md-min-length="0" md-require-match="" md-no-cache="true"-->
-                                             <!--md-menu-class="popup-autocomplete" class="fee-autocomplete">-->
-                                <!--<md-item-template>-->
-                                    <!--<span md-highlight-text="$ctrl.autocomplete.searchText">{{item.displayText}}</span>-->
-                                <!--</md-item-template>-->
-                            <!--</md-autocomplete>-->
-                        <!--</td>-->
-                    <!--</tr>-->
-                <!--</tbody>-->
-            <!--</table>-->
-        <!--</form>-->
-      <!--<p class="dialog-text">Please <span class="fontBold"> CONFIRM </span>to execute or <span class="fontBold"> CANCEL </span> to discard.</p>-->
+    <!--<p class="dialog-text">You are going to cancel leasing of <span class="confirmation-value">{{$ctrl.confirm.amount}}</span>-->
+    <!--<span class="confirmation-value">{{$ctrl.confirm.asset}}</span><br/>-->
+    <!--for the address <span class="confirmation-value">{{$ctrl.confirm.recipient}}</span>-->
+    <!--</p>-->
+    <!--<form name="$ctrl.form" novalidate ng-validate="$ctrl.validationOptions">-->
+    <!--<table>-->
+    <!--<tbody>-->
+    <!--<tr>-->
+    <!--<td>Waves fee</td>-->
+    <!--<td>-->
+    <!--<md-autocomplete md-input-name="cancelFee" md-selected-item="$ctrl.autocomplete.selectedFee" md-search-text="$ctrl.autocomplete.searchText"-->
+    <!--md-items="item in $ctrl.autocomplete.querySearch($ctrl.autocomplete.searchText)"-->
+    <!--md-item-text="item.amount.toString()" md-min-length="0" md-require-match="" md-no-cache="true"-->
+    <!--md-menu-class="popup-autocomplete" class="fee-autocomplete">-->
+    <!--<md-item-template>-->
+    <!--<span md-highlight-text="$ctrl.autocomplete.searchText">{{item.displayText}}</span>-->
+    <!--</md-item-template>-->
+    <!--</md-autocomplete>-->
+    <!--</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+    <!--</table>-->
+    <!--</form>-->
+    <!--<p class="dialog-text">Please <span class="fontBold"> CONFIRM </span>to execute or <span class="fontBold"> CANCEL </span> to discard.</p>-->
     <!--</div>-->
-  <!--</div>-->
+    <!--</div>-->
+
 </waves-scrollbox>

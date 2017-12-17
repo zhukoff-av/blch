@@ -56,6 +56,7 @@
             dialogService.open('#header-wPop-backup');
         }
 
+
         function backup() {
             var clipboard = new Clipboard('#backupForm', {
                 text: function () {
