@@ -16,6 +16,7 @@
         home.screen = SCREENS.splash;
         home.featureUnderDevelopment = featureUnderDevelopment;
         home.logout = logout;
+        home.briefOpen = briefOpen;
 
         var titlePrefix = utilsService.isTestnet() ? 'TESTNET ' : '';
         home.title = titlePrefix + 'Lite Client';
@@ -57,6 +58,10 @@
             } else {
                 $window.location.reload();
             }
+        }
+
+        function briefOpen() {
+            dialogService.open('#brief-history');
         }
     }
 
