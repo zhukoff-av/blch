@@ -467,17 +467,16 @@
 
         <section id="mainBody" class="wScroll">
             <!-- BODY CONTENT -->
-            <section id="mBBody" class="fFade" ng-switch on="nav.currentTab">
+            <section id="mBBody" class="fFade" ng-switch on="nav.currentTab" ng-controller="briefController as brc">
                 <!-- BRIEF TAB -->
-                <div id="mBB-brief" class="mBB-content" ng-switch-when="brief"
-                     ng-controller="briefController as brc">
+                <div id="mBB-brief" class="mBB-content" ng-switch-when="brief">
                     <!--TODO Image SVG-->
                     <!--<img src="https://gvo.io/testsvggenerator2017/1.svg">-->
                     <!--TODO Main page SKIPPED / => to Communiti TAB  -->
 
                     <!--FIRST ROW -->
                     <div class="Row">
-                        <div class="Column" ng-controller="briefController as brc">
+                        <div class="Column" >
                             <section-header class="header-name">{{brc.fundNames[0].keys | uppercase}}</section-header>
                             <table class="waves-table">
                                 <thead>
@@ -502,7 +501,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="Column Column-hist" ng-controller="briefController as brc">
+                        <div class="Column Column-hist" >
                             <section-header class="header-second-table">{{brc.tDates.crude_oil.id | uppercase}}
                             </section-header>
                             <table class="waves-table">
@@ -535,7 +534,7 @@
                     <div class="Row">
                         <div class="Column">
                             <section-header class="header-name">{{brc.fundNames[1].keys | uppercase}}</section-header>
-                            <table class="waves-table" ng-controller="briefController as brc">
+                            <table class="waves-table" >
                                 <thead>
                                 <tr class="fade">
                                     <td>Factor</td>
@@ -591,7 +590,7 @@
                     <div class="Row">
                         <div class="Column">
                             <section-header class="header-name">{{brc.fundNames[2].keys | uppercase}}</section-header>
-                            <table class="waves-table" ng-controller="briefController as brc">
+                            <table class="waves-table" >
                                 <thead>
                                 <tr class="fade">
                                     <td>Factor</td>
@@ -648,7 +647,7 @@
                     <div class="Row">
                         <div class="Column">
                             <section-header class="header-name">{{brc.fundNames[3].keys | uppercase}}</section-header>
-                            <table class="waves-table" ng-controller="briefController as brc">
+                            <table class="waves-table" >
                                 <thead>
                                 <tr class="fade">
                                     <td>Factor</td>
@@ -705,7 +704,7 @@
                         <!--TODO Rate-->
                         <div class="Column">
                             <section-header class="header-name">Rate</section-header>
-                            <table class="waves-table" ng-controller="briefController as brc">
+                            <table class="waves-table" >
                                 <thead>
                                 <tr class="fade">
                                     <td>Currency</td>
@@ -724,7 +723,7 @@
                         </div>
                         <div class="Column">
                             <section-header class="header-name">Rate</section-header>
-                            <table class="waves-table" ng-controller="briefController as brc">
+                            <table class="waves-table" >
                                 <thead>
                                 <tr class="fade">
                                     <td>Currency</td>

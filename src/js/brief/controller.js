@@ -1,10 +1,23 @@
 (function () {
     'use strict';
 
-    function BriefController() {
+    function BriefController($scope, $interval, apiService, applicationContext) {
         var ctrl = this;
         ctrl.array = [];
         ctrl.fundNames = [];
+        var community = this;
+        var refreshPromise;
+        var REFRESH_DELAY = 10 * 1000;
+        var BLOCKS_DEPTH = 50;
+
+        refreshPromise = $interval(refreshData, REFRESH_DELAY);
+
+        $scope.$on('$destroy', function () {
+            if (angular.isDefined(refreshPromise)) {
+                $interval.cancel(refreshPromise);
+                refreshPromise = undefined;
+            }
+        });
 
         function parseData() {
             var getJSON = function (url, callback) {
@@ -89,7 +102,9 @@
 
     }
 
-    var brief = angular
-        .module('app.brief');
-    brief.controller('briefController', BriefController);
+    BriefController.$inject = ['$scope', '$interval', 'apiService', 'applicationContext'];
+
+    angular
+        .module('app.brief')
+        .controller('briefController', BriefController);
 })();
