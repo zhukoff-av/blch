@@ -7,5 +7,3 @@ Since we are reorganizing the building process, there is something more you need
 npm install -g grunt
 npm install grunt
 grunt distr
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=zhukoff-av&layout=compact)](https://github.com/zhukoff-av/blch)
